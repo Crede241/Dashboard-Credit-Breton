@@ -1,0 +1,280 @@
+{
+  "config": "{\"version\":\"5.47\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY23SU08\",\"version\":\"5.48\",\"type\":2}},\"activeSectionIndex\":1,\"defaultDrillFilterOtherVisuals\":true,\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}],\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "pods": [
+    {
+      "boundSection": "ReportSection",
+      "config": "{}",
+      "name": "Pod"
+    },
+    {
+      "boundSection": "ReportSectionf116dbc9aa6a57a0d0ca",
+      "config": "{}",
+      "name": "Pod1",
+      "parameters": "[{\"name\":\"Param_Filter9668557608b255339d55\",\"boundFilter\":\"Filter9668557608b255339d55\",\"fieldExpr\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Demandes de pret\"}},\"Property\":\"Montant opération\"}},\"asAggregation\":true},{\"name\":\"Param_Filterb26071b24c947089e9ba\",\"boundFilter\":\"Filterb26071b24c947089e9ba\",\"fieldExpr\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Demandes de pret\"}},\"Property\":\"Numéro client\"}}}]",
+      "referenceScope": 1,
+      "type": 1
+    }
+  ],
+  "publicCustomVisuals": [
+    "Timeline1447991079100"
+  ],
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "16212723223472_Cre_dit-breton6532091038896011.png",
+            "path": "16212723223472_Cre_dit-breton6532091038896011.png",
+            "type": 100
+          },
+          {
+            "name": "Capture_d'_cran_2024-09-11_2327557316715446323.png",
+            "path": "Capture_d'_cran_2024-09-11_2327557316715446323.png",
+            "type": 100
+          }
+        ],
+        "name": "RegisteredResources",
+        "type": 1
+      }
+    },
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY23SU08",
+            "path": "BaseThemes/CY23SU08.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{\"objects\":{\"outspacePane\":[{\"properties\":{\"width\":{\"expr\":{\"Literal\":{\"Value\":\"185L\"}}}}}]}}",
+      "displayName": "Analyse de demande prêts immobilier ",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "ReportSection",
+      "ordinal": 1,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"00b3eb4d680c19492031\",\"layouts\":[{\"id\":0,\"position\":{\"x\":877.6910016977929,\"y\":78.23429541595925,\"z\":6000,\"width\":300.7130730050934,\"height\":117.35144312393888,\"tabOrder\":6000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Avg(Demandes de pret.Montant opération)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"Demandes de pret\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Montant opération\"}},\"Function\":5},\"Name\":\"Avg(Demandes de pret.Montant opération)\",\"NativeReferenceName\":\"Nombre de Montant opération\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Montant opération\"}},\"Function\":5}}}]},\"columnProperties\":{\"Avg(Demandes de pret.Montant opération)\":{\"displayName\":\"Total de prêts refusés\"}},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"labels\":[{\"properties\":{}}],\"categoryLabels\":[{\"properties\":{\"bold\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"15D\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Montant moyen des  opération accordés par CB'\"}}}}}],\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"color\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#e6e6e6'\"}}}}}}}],\"dropShadow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[{\"name\":\"Filtera731a693d66517758315\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Demandes de pret\"}},\"Property\":\"Accord\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"Demandes de pret\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Accord\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'N'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{\"general\":[{\"properties\":{}}]},\"isHiddenInViewMode\":false},{\"name\":\"Filter48dc68606b8801ca4d56\",\"expression\":{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Demandes de pret\"}},\"Hierarchy\":\"Date demande hiérachisée\"}},\"Level\":\"Annee\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"Demandes de pret\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Annee\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"2018L\"}}],[{\"Literal\":{\"Value\":\"2019L\"}}],[{\"Literal\":{\"Value\":\"2020L\"}}],[{\"Literal\":{\"Value\":\"2021L\"}}]]}}}]},\"type\":\"Advanced\",\"cachedDisplayNames\":[{\"id\":{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Demandes de pret\"}},\"Property\":\"Annee\"}},\"Right\":{\"Literal\":{\"Value\":\"2018L\"}}}}},\"displayName\":\"2018\"},{\"id\":{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Demandes de pret\"}},\"Property\":\"Annee\"}},\"Right\":{\"Literal\":{\"Value\":\"2019L\"}}}}},\"displayName\":\"2019\"},{\"id\":{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Demandes de pret\"}},\"Property\":\"Annee\"}},\"Right\":{\"Literal\":{\"Value\":\"2020L\"}}}}},\"displayName\":\"2020\"},{\"id\":{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Demandes de pret\"}},\"Property\":\"Annee\"}},\"Right\":{\"Literal\":{\"Value\":\"2021L\"}}}}},\"displayName\":\"2021\"}],\"howCreated\":1,\"objects\":{},\"isHiddenInViewMode\":false}]",
+          "height": 117.35,
+          "width": 300.71,
+          "x": 877.69,
+          "y": 78.23,
+          "z": 6000.00
+        },
+        {
+          "config": "{\"name\":\"23f85e7e29d99562af71\",\"layouts\":[{\"id\":0,\"position\":{\"x\":12.224108658743633,\"y\":221.25636672325976,\"z\":1000,\"width\":640.5432937181664,\"height\":226.14601018675722,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Demandes de pret.Date demande hiérachisée.Annee\",\"active\":true},{\"queryRef\":\"Demandes de pret.Date demande hiérachisée.Trimestre\"},{\"queryRef\":\"Demandes de pret.Date demande hiérachisée.Mois\"},{\"queryRef\":\"Demandes de pret.Date demande hiérachisée.Jour\"}],\"Y\":[{\"queryRef\":\"Sum(Demandes de pret.Montant opération)\"}],\"Series\":[{\"queryRef\":\"Demandes de pret.Accord\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"Demandes de pret\",\"Type\":0}],\"Select\":[{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Hierarchy\":\"Date demande hiérachisée\"}},\"Level\":\"Annee\"},\"Name\":\"Demandes de pret.Date demande hiérachisée.Annee\",\"NativeReferenceName\":\"Date demande hiérachisée Annee\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Hierarchy\":\"Date demande hiérachisée\"}},\"Level\":\"Trimestre\"},\"Name\":\"Demandes de pret.Date demande hiérachisée.Trimestre\",\"NativeReferenceName\":\"Date demande hiérachisée Trimestre\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Hierarchy\":\"Date demande hiérachisée\"}},\"Level\":\"Mois\"},\"Name\":\"Demandes de pret.Date demande hiérachisée.Mois\",\"NativeReferenceName\":\"Date demande hiérachisée Mois\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Hierarchy\":\"Date demande hiérachisée\"}},\"Level\":\"Jour\"},\"Name\":\"Demandes de pret.Date demande hiérachisée.Jour\",\"NativeReferenceName\":\"Date demande hiérachisée Jour\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Montant opération\"}},\"Function\":1},\"Name\":\"Sum(Demandes de pret.Montant opération)\",\"NativeReferenceName\":\"Moyenne de Montant opération\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Accord\"},\"Name\":\"Demandes de pret.Accord\",\"NativeReferenceName\":\"Accord\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Montant opération\"}},\"Function\":1}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"valueAxis\":[{\"properties\":{\"showAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Montant moyen des  opérations accordées par CB'\"}}}}}],\"dropShadow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[{\"name\":\"Filtera731a693d66517758315\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Demandes de pret\"}},\"Property\":\"Accord\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"Demandes de pret\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Accord\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'O'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":0,\"objects\":{},\"isHiddenInViewMode\":false},{\"name\":\"Filter48dc68606b8801ca4d56\",\"expression\":{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Demandes de pret\"}},\"Hierarchy\":\"Date demande hiérachisée\"}},\"Level\":\"Annee\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"Demandes de pret\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Annee\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"2018L\"}}],[{\"Literal\":{\"Value\":\"2019L\"}}],[{\"Literal\":{\"Value\":\"2020L\"}}],[{\"Literal\":{\"Value\":\"2021L\"}}]]}}}]},\"type\":\"Advanced\",\"cachedDisplayNames\":[{\"id\":{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Demandes de pret\"}},\"Property\":\"Annee\"}},\"Right\":{\"Literal\":{\"Value\":\"2018L\"}}}}},\"displayName\":\"2018\"},{\"id\":{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Demandes de pret\"}},\"Property\":\"Annee\"}},\"Right\":{\"Literal\":{\"Value\":\"2019L\"}}}}},\"displayName\":\"2019\"},{\"id\":{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Demandes de pret\"}},\"Property\":\"Annee\"}},\"Right\":{\"Literal\":{\"Value\":\"2020L\"}}}}},\"displayName\":\"2020\"},{\"id\":{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Demandes de pret\"}},\"Property\":\"Annee\"}},\"Right\":{\"Literal\":{\"Value\":\"2021L\"}}}}},\"displayName\":\"2021\"}],\"howCreated\":0,\"objects\":{},\"isHiddenInViewMode\":false}]",
+          "height": 226.15,
+          "width": 640.54,
+          "x": 12.22,
+          "y": 221.26,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"27cf44a195e82a910078\",\"layouts\":[{\"id\":0,\"position\":{\"x\":12.224108658743633,\"y\":457.1816638370119,\"z\":2000,\"width\":640.5432937181664,\"height\":246.9269949066214,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"donutChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Agences.Ville\",\"active\":true}],\"Y\":[{\"queryRef\":\"Divide(CountNonNull(Demandes de pret.Numéro demande de prêt), ScopedEval(CountNonNull(Demandes de pret.Numéro demande de prêt), []))\"}],\"Series\":[{\"queryRef\":\"Demandes de pret.Accord\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"Demandes de pret\",\"Type\":0},{\"Name\":\"a\",\"Entity\":\"Agences\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"a\"}},\"Property\":\"Ville\"},\"Name\":\"Agences.Ville\",\"NativeReferenceName\":\"Ville\"},{\"Arithmetic\":{\"Left\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Numéro demande de prêt\"}},\"Function\":5}},\"Right\":{\"ScopedEval\":{\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Numéro demande de prêt\"}},\"Function\":5}},\"Scope\":[]}},\"Operator\":3},\"Name\":\"Divide(CountNonNull(Demandes de pret.Numéro demande de prêt), ScopedEval(CountNonNull(Demandes de pret.Numéro demande de prêt), []))\",\"NativeReferenceName\":\"%TG Nombre de Numéro demande de prêt\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Accord\"},\"Name\":\"Demandes de pret.Accord\",\"NativeReferenceName\":\"Accord\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Arithmetic\":{\"Left\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Numéro demande de prêt\"}},\"Function\":5}},\"Right\":{\"ScopedEval\":{\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Numéro demande de prêt\"}},\"Function\":5}},\"Scope\":[]}},\"Operator\":3}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":-0.1}}}}}},\"selector\":{\"data\":[{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Demandes de pret\"}},\"Property\":\"Accord\"}},\"Right\":{\"Literal\":{\"Value\":\"null\"}}}}}]}},{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#3A8F5B'\"}}}}}},\"selector\":{\"data\":[{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Demandes de pret\"}},\"Property\":\"Accord\"}},\"Right\":{\"Literal\":{\"Value\":\"'N'\"}}}}}]}},{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":9,\"Percent\":0}}}}}},\"selector\":{\"data\":[{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Demandes de pret\"}},\"Property\":\"Accord\"}},\"Right\":{\"Literal\":{\"Value\":\"'O'\"}}}}}]}}],\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Nombre de prêt accordés  par  Agence '\"}}}}}],\"dropShadow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[{\"expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Demandes de pret\"}},\"Property\":\"Numéro demande de prêt\"}},\"Function\":5}},\"type\":\"Advanced\",\"howCreated\":1,\"isHiddenInViewMode\":false},{\"name\":\"Filter37b5b64bdbb0bb6beab0\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Demandes de pret\"}},\"Property\":\"Accord\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"Demandes de pret\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Not\":{\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Accord\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"null\"}}],[{\"Literal\":{\"Value\":\"'N'\"}}]]}}}}}]},\"type\":\"Categorical\",\"howCreated\":0,\"objects\":{\"general\":[{\"properties\":{\"isInvertedSelectionMode\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"isHiddenInViewMode\":false}]",
+          "height": 246.93,
+          "width": 640.54,
+          "x": 12.22,
+          "y": 457.18,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"30d92196994c03333a72\",\"layouts\":[{\"id\":0,\"position\":{\"x\":657.6570458404075,\"y\":221.25636672325976,\"z\":0,\"width\":605.0933786078099,\"height\":224.92359932088286,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"columnChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Demandes de pret.Date demande hiérachisée.Annee\",\"active\":true}],\"Series\":[{\"queryRef\":\"Demandes de pret.Accord\"}],\"Y\":[{\"queryRef\":\"Sum(Demandes de pret.Montant opération)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"Demandes de pret\",\"Type\":0}],\"Select\":[{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Hierarchy\":\"Date demande hiérachisée\"}},\"Level\":\"Annee\"},\"Name\":\"Demandes de pret.Date demande hiérachisée.Annee\",\"NativeReferenceName\":\"Date demande hiérachisée Annee\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Accord\"},\"Name\":\"Demandes de pret.Accord\",\"NativeReferenceName\":\"Accord\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Montant opération\"}},\"Function\":0},\"Name\":\"Sum(Demandes de pret.Montant opération)\",\"NativeReferenceName\":\"Somme de Montant opération\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Montant opération\"}},\"Function\":0}}}]},\"queryOptions\":{\"keepProjectionOrder\":true},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"labelPrecision\":{\"expr\":{\"Literal\":{\"Value\":\"0L\"}}},\"labelOrientation\":{\"expr\":{\"Literal\":{\"Value\":\"1D\"}}},\"labelDisplayUnits\":{\"expr\":{\"Literal\":{\"Value\":\"1000000D\"}}},\"labelOverflow\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"showDynamicLabels\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"valueAxis\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"gridlineStyle\":{\"expr\":{\"Literal\":{\"Value\":\"'dotted'\"}}},\"showAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"totals\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":-0.1}}}}}},\"selector\":{\"data\":[{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Demandes de pret\"}},\"Property\":\"Accord\"}},\"Right\":{\"Literal\":{\"Value\":\"null\"}}}}}]}},{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#7DCE9C'\"}}}}}},\"selector\":{\"data\":[{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Demandes de pret\"}},\"Property\":\"Accord\"}},\"Right\":{\"Literal\":{\"Value\":\"'O'\"}}}}}]}},{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#95484E'\"}}}}}},\"selector\":{\"data\":[{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Demandes de pret\"}},\"Property\":\"Accord\"}},\"Right\":{\"Literal\":{\"Value\":\"'N'\"}}}}}]}}],\"legend\":[{\"properties\":{\"showGradientLegend\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"general\":[{\"properties\":{\"responsive\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"zoom\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"vcObjects\":{\"visualHeader\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"visualTooltip\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Montant des opérations effectuées  par années'\"}}}}}],\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"color\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#e6e6e6'\"}}}}}}}],\"dropShadow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"color\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":1,\"Percent\":0}}}}}}}]}}}",
+          "filters": "[{\"expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Demandes de pret\"}},\"Property\":\"Montant opération\"}},\"Function\":5}},\"type\":\"Advanced\",\"howCreated\":1,\"isHiddenInViewMode\":false},{\"expression\":{\"Arithmetic\":{\"Left\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Demandes de pret\"}},\"Property\":\"Montant opération\"}},\"Function\":2}},\"Right\":{\"ScopedEval\":{\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Demandes de pret\"}},\"Property\":\"Montant opération\"}},\"Function\":2}},\"Scope\":[]}},\"Operator\":3}},\"type\":\"Advanced\",\"howCreated\":1,\"isHiddenInViewMode\":false},{\"expression\":{\"Arithmetic\":{\"Left\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Demandes de pret\"}},\"Property\":\"Montant opération\"}},\"Function\":0}},\"Right\":{\"ScopedEval\":{\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Demandes de pret\"}},\"Property\":\"Montant opération\"}},\"Function\":0}},\"Scope\":[]}},\"Operator\":3}},\"type\":\"Advanced\",\"howCreated\":1,\"isHiddenInViewMode\":false}]",
+          "height": 224.92,
+          "width": 605.09,
+          "x": 657.66,
+          "y": 221.26,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"5b4d102f8704163980d0\",\"layouts\":[{\"id\":0,\"position\":{\"x\":39.117147707979626,\"y\":78.23429541595925,\"z\":4000,\"width\":392.39388794567066,\"height\":117.35144312393888,\"tabOrder\":4000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sum(Demandes de pret.Montant opération)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"Demandes de pret\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Montant opération\"}},\"Function\":0},\"Name\":\"Sum(Demandes de pret.Montant opération)\",\"NativeReferenceName\":\"Total des opérations \"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Montant opération\"}},\"Function\":0}}}]},\"columnProperties\":{\"Sum(Demandes de pret.Montant opération)\":{\"displayName\":\"Total des opérations \"}},\"queryOptions\":{\"keepProjectionOrder\":true},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"labels\":[{\"properties\":{\"labelPrecision\":{\"expr\":{\"Literal\":{\"Value\":\"0L\"}}},\"labelDisplayUnits\":{\"expr\":{\"Literal\":{\"Value\":\"1000000D\"}}},\"preserveWhitespace\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"general\":[{\"properties\":{}}],\"categoryLabels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"15D\"}}},\"bold\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"vcObjects\":{\"visualHeader\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"visualTooltip\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"''\"}}},\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"titleWrap\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"subTitle\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"general\":[{\"properties\":{\"keepLayerOrder\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"padding\":[{\"properties\":{\"right\":{\"expr\":{\"Literal\":{\"Value\":\"5D\"}}},\"left\":{\"expr\":{\"Literal\":{\"Value\":\"5D\"}}},\"top\":{\"expr\":{\"Literal\":{\"Value\":\"5D\"}}},\"bottom\":{\"expr\":{\"Literal\":{\"Value\":\"5D\"}}}}}],\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"color\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#e6e6e6'\"}}}}}}}],\"dropShadow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[{\"expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Demandes de pret\"}},\"Property\":\"Montant opération\"}},\"Function\":5}},\"type\":\"Advanced\",\"howCreated\":1,\"isHiddenInViewMode\":false},{\"expression\":{\"Arithmetic\":{\"Left\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Demandes de pret\"}},\"Property\":\"Montant opération\"}},\"Function\":2}},\"Right\":{\"ScopedEval\":{\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Demandes de pret\"}},\"Property\":\"Montant opération\"}},\"Function\":2}},\"Scope\":[]}},\"Operator\":3}},\"type\":\"Advanced\",\"howCreated\":1,\"isHiddenInViewMode\":false},{\"expression\":{\"Arithmetic\":{\"Left\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Demandes de pret\"}},\"Property\":\"Montant opération\"}},\"Function\":0}},\"Right\":{\"ScopedEval\":{\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Demandes de pret\"}},\"Property\":\"Montant opération\"}},\"Function\":0}},\"Scope\":[]}},\"Operator\":3}},\"type\":\"Advanced\",\"howCreated\":1,\"isHiddenInViewMode\":false}]",
+          "height": 117.35,
+          "width": 392.39,
+          "x": 39.12,
+          "y": 78.23,
+          "z": 4000.00
+        },
+        {
+          "config": "{\"name\":\"6345fad947549b00e86e\",\"layouts\":[{\"id\":0,\"position\":{\"x\":657.6570458404075,\"y\":457.1816638370119,\"z\":3000,\"width\":605.0933786078099,\"height\":246.9269949066214,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"ribbonChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Demandes de pret.Date demande hiérachisée.Annee\",\"active\":true},{\"queryRef\":\"Demandes de pret.Date demande hiérachisée.Trimestre\"},{\"queryRef\":\"Demandes de pret.Date demande hiérachisée.Mois\"},{\"queryRef\":\"Demandes de pret.Date demande hiérachisée.Jour\"}],\"Series\":[{\"queryRef\":\"Agences.Ville\"}],\"Y\":[{\"queryRef\":\"CountNonNull(Demandes de pret.Numéro demande de prêt)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"Demandes de pret\",\"Type\":0},{\"Name\":\"a\",\"Entity\":\"Agences\",\"Type\":0}],\"Select\":[{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Hierarchy\":\"Date demande hiérachisée\"}},\"Level\":\"Annee\"},\"Name\":\"Demandes de pret.Date demande hiérachisée.Annee\",\"NativeReferenceName\":\"Date demande hiérachisée Annee\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Hierarchy\":\"Date demande hiérachisée\"}},\"Level\":\"Trimestre\"},\"Name\":\"Demandes de pret.Date demande hiérachisée.Trimestre\",\"NativeReferenceName\":\"Date demande hiérachisée Trimestre\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Hierarchy\":\"Date demande hiérachisée\"}},\"Level\":\"Mois\"},\"Name\":\"Demandes de pret.Date demande hiérachisée.Mois\",\"NativeReferenceName\":\"Date demande hiérachisée Mois\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Hierarchy\":\"Date demande hiérachisée\"}},\"Level\":\"Jour\"},\"Name\":\"Demandes de pret.Date demande hiérachisée.Jour\",\"NativeReferenceName\":\"Date demande hiérachisée Jour\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"a\"}},\"Property\":\"Ville\"},\"Name\":\"Agences.Ville\",\"NativeReferenceName\":\"Ville\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Numéro demande de prêt\"}},\"Function\":5},\"Name\":\"CountNonNull(Demandes de pret.Numéro demande de prêt)\",\"NativeReferenceName\":\"Nombre de Numéro demande de prêt\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Numéro demande de prêt\"}},\"Function\":5}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"categoryAxis\":[{\"properties\":{\"axisType\":{\"expr\":{\"Literal\":{\"Value\":\"'Scalar'\"}}}}}],\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Nombre de  demande de prêt par Année | Ville'\"}}}}}],\"dropShadow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 246.93,
+          "width": 605.09,
+          "x": 657.66,
+          "y": 457.18,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"83278982d061b4627109\",\"layouts\":[{\"id\":0,\"position\":{\"x\":509.7453310696095,\"y\":78.23429541595925,\"z\":5000,\"width\":297.0458404074703,\"height\":117.35144312393888,\"tabOrder\":5000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"CountNonNull(Demandes de pret.Numéro demande de prêt)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"Demandes de pret\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Numéro demande de prêt\"}},\"Function\":5},\"Name\":\"CountNonNull(Demandes de pret.Numéro demande de prêt)\",\"NativeReferenceName\":\"Total de prêts accordés\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Numéro demande de prêt\"}},\"Function\":5}}}]},\"columnProperties\":{\"CountNonNull(Demandes de pret.Numéro demande de prêt)\":{\"displayName\":\"Total de prêts accordés\"}},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"labels\":[{\"properties\":{}}],\"categoryLabels\":[{\"properties\":{\"bold\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"15D\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Nombre de  demande de prêt par Année | Ville'\"}}}}}],\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"color\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#e6e6e6'\"}}}}},\"radius\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}}}}],\"dropShadow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"color\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":1,\"Percent\":0}}}}}}}]}}}",
+          "filters": "[{\"name\":\"Filterbc10cdf387a196a090d8\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Demandes de pret\"}},\"Property\":\"Accord\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"Demandes de pret\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Accord\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'O'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{}}]",
+          "height": 117.35,
+          "width": 297.05,
+          "x": 509.75,
+          "y": 78.23,
+          "z": 5000.00
+        },
+        {
+          "config": "{\"name\":\"f7b835da7dde85c18cb1\",\"layouts\":[{\"id\":0,\"position\":{\"x\":155.24617996604414,\"y\":15.891341256366724,\"z\":7000,\"width\":922.9202037351444,\"height\":45.22920203735144,\"tabOrder\":7000}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Analyse des Demandes de Prêt Immobilier\",\"textStyle\":{\"fontWeight\":\"bold\",\"fontSize\":\"12pt\"}}],\"horizontalTextAlignment\":\"center\"}]}}]},\"vcObjects\":{\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 45.23,
+          "width": 922.92,
+          "x": 155.25,
+          "y": 15.89,
+          "z": 7000.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{\"visibility\":1}",
+      "displayName": "Performance Agence ",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "ReportSectiona9cfe6e7d851dbff97f2",
+      "ordinal": 2,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"3769368195695c67e300\",\"layouts\":[{\"id\":0,\"position\":{\"x\":607.373389121339,\"y\":470.26878661087864,\"z\":4000,\"width\":597.7760669456067,\"height\":249.53037656903766,\"tabOrder\":4000}}],\"singleVisual\":{\"visualType\":\"ribbonChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Demandes de pret.Date demande hiérachisée.Annee\",\"active\":true},{\"queryRef\":\"Demandes de pret.Date demande hiérachisée.Trimestre\"},{\"queryRef\":\"Demandes de pret.Date demande hiérachisée.Mois\"},{\"queryRef\":\"Demandes de pret.Date demande hiérachisée.Jour\"}],\"Series\":[{\"queryRef\":\"Agences.Ville\"}],\"Y\":[{\"queryRef\":\"CountNonNull(Demandes de pret.Numéro demande de prêt)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"Demandes de pret\",\"Type\":0},{\"Name\":\"a\",\"Entity\":\"Agences\",\"Type\":0}],\"Select\":[{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Hierarchy\":\"Date demande hiérachisée\"}},\"Level\":\"Annee\"},\"Name\":\"Demandes de pret.Date demande hiérachisée.Annee\",\"NativeReferenceName\":\"Date demande hiérachisée Annee\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Hierarchy\":\"Date demande hiérachisée\"}},\"Level\":\"Trimestre\"},\"Name\":\"Demandes de pret.Date demande hiérachisée.Trimestre\",\"NativeReferenceName\":\"Date demande hiérachisée Trimestre\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Hierarchy\":\"Date demande hiérachisée\"}},\"Level\":\"Mois\"},\"Name\":\"Demandes de pret.Date demande hiérachisée.Mois\",\"NativeReferenceName\":\"Date demande hiérachisée Mois\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Hierarchy\":\"Date demande hiérachisée\"}},\"Level\":\"Jour\"},\"Name\":\"Demandes de pret.Date demande hiérachisée.Jour\",\"NativeReferenceName\":\"Date demande hiérachisée Jour\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"a\"}},\"Property\":\"Ville\"},\"Name\":\"Agences.Ville\",\"NativeReferenceName\":\"Ville\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Numéro demande de prêt\"}},\"Function\":5},\"Name\":\"CountNonNull(Demandes de pret.Numéro demande de prêt)\",\"NativeReferenceName\":\"Nombre de Numéro demande de prêt\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Numéro demande de prêt\"}},\"Function\":5}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"categoryAxis\":[{\"properties\":{\"axisType\":{\"expr\":{\"Literal\":{\"Value\":\"'Scalar'\"}}}}}],\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 249.53,
+          "width": 597.78,
+          "x": 607.37,
+          "y": 470.27,
+          "z": 4000.00
+        },
+        {
+          "config": "{\"name\":\"71cc60e57c1be1f9315c\",\"layouts\":[{\"id\":0,\"position\":{\"x\":26.666666666666664,\"y\":21.11111111111111,\"z\":0,\"width\":530,\"height\":395.55555555555554,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"map\",\"projections\":{\"Category\":[{\"queryRef\":\"Agences.Ville\",\"active\":true}],\"Size\":[{\"queryRef\":\"CountNonNull(Demandes de pret.Numéro client)\"}],\"Series\":[{\"queryRef\":\"Agences.Ville\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"a\",\"Entity\":\"Agences\",\"Type\":0},{\"Name\":\"d\",\"Entity\":\"Demandes de pret\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"a\"}},\"Property\":\"Ville\"},\"Name\":\"Agences.Ville\",\"NativeReferenceName\":\"Ville\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Numéro client\"}},\"Function\":5},\"Name\":\"CountNonNull(Demandes de pret.Numéro client)\",\"NativeReferenceName\":\"Nombre de Numéro client\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"bubbles\":[{\"properties\":{\"bubbleSize\":{\"expr\":{\"Literal\":{\"Value\":\"14L\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 395.56,
+          "width": 530.00,
+          "x": 26.67,
+          "y": 21.11,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"ba25f4a575a137ff09b3\",\"layouts\":[{\"id\":0,\"position\":{\"x\":27,\"y\":427,\"width\":530,\"height\":293,\"z\":1000,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"multiRowCard\",\"projections\":{\"Values\":[{\"queryRef\":\"Agences.Ville\"},{\"queryRef\":\"Demandes de pret.Numéro client\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"a\",\"Entity\":\"Agences\",\"Type\":0},{\"Name\":\"d\",\"Entity\":\"Demandes de pret\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"a\"}},\"Property\":\"Ville\"},\"Name\":\"Agences.Ville\",\"NativeReferenceName\":\"Ville\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Numéro client\"}},\"Function\":5},\"Name\":\"Demandes de pret.Numéro client\",\"NativeReferenceName\":\"Nombre de Numéro client\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"a\"}},\"Property\":\"Ville\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 293.00,
+          "width": 530.00,
+          "x": 27.00,
+          "y": 427.00,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"ce3f705cce1e358248a5\",\"layouts\":[{\"id\":0,\"position\":{\"x\":607.373389121339,\"y\":65.81020920502093,\"z\":3000,\"width\":529.2237656903766,\"height\":394.86125523012555,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"columnChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Agences.Ville\",\"active\":true}],\"Y\":[{\"queryRef\":\"CountNonNull(Demandes de pret.Numéro demande de prêt)\"}],\"Series\":[{\"queryRef\":\"Demandes de pret.Accord\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"a\",\"Entity\":\"Agences\",\"Type\":0},{\"Name\":\"d\",\"Entity\":\"Demandes de pret\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"a\"}},\"Property\":\"Ville\"},\"Name\":\"Agences.Ville\",\"NativeReferenceName\":\"Ville\"},{\"Arithmetic\":{\"Left\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Numéro demande de prêt\"}},\"Function\":5}},\"Right\":{\"ScopedEval\":{\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Numéro demande de prêt\"}},\"Function\":5}},\"Scope\":[]}},\"Operator\":3},\"Name\":\"CountNonNull(Demandes de pret.Numéro demande de prêt)\",\"NativeReferenceName\":\"%TG Nombre de Numéro demande de prêt\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Accord\"},\"Name\":\"Demandes de pret.Accord\",\"NativeReferenceName\":\"Accord\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Arithmetic\":{\"Left\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Numéro demande de prêt\"}},\"Function\":5}},\"Right\":{\"ScopedEval\":{\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Numéro demande de prêt\"}},\"Function\":5}},\"Scope\":[]}},\"Operator\":3}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":-0.1}}}}}},\"selector\":{\"data\":[{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Demandes de pret\"}},\"Property\":\"Accord\"}},\"Right\":{\"Literal\":{\"Value\":\"null\"}}}}}]}},{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#3A8F5B'\"}}}}}},\"selector\":{\"data\":[{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Demandes de pret\"}},\"Property\":\"Accord\"}},\"Right\":{\"Literal\":{\"Value\":\"'N'\"}}}}}]}},{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":9,\"Percent\":0}}}}}},\"selector\":{\"data\":[{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Demandes de pret\"}},\"Property\":\"Accord\"}},\"Right\":{\"Literal\":{\"Value\":\"'O'\"}}}}}]}}],\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"totals\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"categoryAxis\":[{\"properties\":{\"concatenateLabels\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"showAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"valueAxis\":[{\"properties\":{\"showAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Nombre de Numéro demande de prêt par Ville et Accord'\"}}}}}]}}}",
+          "filters": "[{\"expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Demandes de pret\"}},\"Property\":\"Numéro demande de prêt\"}},\"Function\":5}},\"type\":\"Advanced\",\"howCreated\":1,\"isHiddenInViewMode\":false}]",
+          "height": 394.86,
+          "width": 529.22,
+          "x": 607.37,
+          "y": 65.81,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"e1e0fd331a850065d21c\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"width\":100,\"height\":40,\"z\":2000,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"actionButton\",\"drillFilterOtherVisuals\":true,\"objects\":{\"icon\":[{\"properties\":{\"shapeType\":{\"expr\":{\"Literal\":{\"Value\":\"'back'\"}}}},\"selector\":{\"id\":\"default\"}}]},\"vcObjects\":{\"visualLink\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"type\":{\"expr\":{\"Literal\":{\"Value\":\"'Back'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 40.00,
+          "width": 100.00,
+          "x": 0.00,
+          "y": 0.00,
+          "z": 2000.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{\"visibility\":1}",
+      "displayName": "Indicateurs Clients ",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "ReportSectionaa339413020a6e3e9742",
+      "ordinal": 4,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"31d1701759a2982a0605\",\"layouts\":[{\"id\":0,\"position\":{\"x\":14.66893039049236,\"y\":45.22920203735144,\"z\":0,\"width\":837.3514431239389,\"height\":460.848896434635,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Demandes de pret.Numéro client\"},{\"queryRef\":\"Demandes de pret.Numéro demande de prêt\"},{\"queryRef\":\"Sum(Demandes de pret.Montant opération)\"},{\"queryRef\":\"Situation famille.Date de naissance\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"Demandes de pret\",\"Type\":0},{\"Name\":\"s\",\"Entity\":\"Situation famille\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Numéro client\"},\"Name\":\"Demandes de pret.Numéro client\",\"NativeReferenceName\":\"Numéro client\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Numéro demande de prêt\"}},\"Function\":5},\"Name\":\"Demandes de pret.Numéro demande de prêt\",\"NativeReferenceName\":\"Nombre de Numéro demande de prêt\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Montant opération\"}},\"Function\":0},\"Name\":\"Sum(Demandes de pret.Montant opération)\",\"NativeReferenceName\":\"Somme de Montant opération\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Date de naissance\"},\"Name\":\"Situation famille.Date de naissance\",\"NativeReferenceName\":\"Date de naissance\"}]},\"drillFilterOtherVisuals\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 460.85,
+          "width": 837.35,
+          "x": 14.67,
+          "y": 45.23,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Page d'acceuil",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "ReportSectionbf7dfcbb19b96471b9a0",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"2e7f0fa24acb04db9991\",\"layouts\":[{\"id\":0,\"position\":{\"x\":9.779286926994907,\"y\":0,\"z\":0,\"width\":1270.0848896434636,\"height\":693.106960950764,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"image\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"imageUrl\":{\"expr\":{\"ResourcePackageItem\":{\"PackageName\":\"RegisteredResources\",\"PackageType\":1,\"ItemName\":\"Capture_d'_cran_2024-09-11_2327557316715446323.png\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 693.11,
+          "width": 1270.08,
+          "x": 9.78,
+          "y": 0.00,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"c119ff454bbd61104a18\",\"layouts\":[{\"id\":0,\"position\":{\"x\":645.4329371816639,\"y\":360.6112054329372,\"z\":1000,\"width\":299.490662139219,\"height\":299.490662139219,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"image\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"imageUrl\":{\"expr\":{\"ResourcePackageItem\":{\"PackageName\":\"RegisteredResources\",\"PackageType\":1,\"ItemName\":\"16212723223472_Cre_dit-breton6532091038896011.png\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 299.49,
+          "width": 299.49,
+          "x": 645.43,
+          "y": 360.61,
+          "z": 1000.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{\"visibility\":1}",
+      "displayName": "Liste des Clients",
+      "displayOption": 1,
+      "filters": "[{\"name\":\"Filter9668557608b255339d55\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Demandes de pret\"}},\"Property\":\"Montant opération\"}},\"type\":\"Categorical\",\"howCreated\":5},{\"name\":\"Filterb26071b24c947089e9ba\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Demandes de pret\"}},\"Property\":\"Numéro client\"}},\"type\":\"Categorical\",\"howCreated\":5}]",
+      "height": 720.00,
+      "name": "ReportSectionf116dbc9aa6a57a0d0ca",
+      "ordinal": 3,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"cd57a896a57d065015b9\",\"layouts\":[{\"id\":0,\"position\":{\"x\":9.779286926994907,\"y\":0,\"z\":0,\"width\":795.7894736842105,\"height\":720,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Demandes de pret.Numéro client\"},{\"queryRef\":\"Agences.Ville\"},{\"queryRef\":\"Demandes de pret.Date de demande\"},{\"queryRef\":\"Sum(Demandes de pret.Montant opération)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"Demandes de pret\",\"Type\":0},{\"Name\":\"a\",\"Entity\":\"Agences\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Numéro client\"},\"Name\":\"Demandes de pret.Numéro client\",\"NativeReferenceName\":\"Numéro client1\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Date de demande\"},\"Name\":\"Demandes de pret.Date de demande\",\"NativeReferenceName\":\"Date de demande\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Montant opération\"}},\"Function\":0},\"Name\":\"Sum(Demandes de pret.Montant opération)\",\"NativeReferenceName\":\"Somme de Montant opération\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"a\"}},\"Property\":\"Ville\"},\"Name\":\"Agences.Ville\",\"NativeReferenceName\":\"Ville\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Montant opération\"}},\"Function\":0}}}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 720.00,
+          "width": 795.79,
+          "x": 9.78,
+          "y": 0.00,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"f3c018763b52890e62c3\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"width\":100,\"height\":40,\"z\":1000,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"actionButton\",\"drillFilterOtherVisuals\":true,\"objects\":{\"icon\":[{\"properties\":{\"shapeType\":{\"expr\":{\"Literal\":{\"Value\":\"'back'\"}}}},\"selector\":{\"id\":\"default\"}}]},\"vcObjects\":{\"visualLink\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"type\":{\"expr\":{\"Literal\":{\"Value\":\"'Back'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 40.00,
+          "width": 100.00,
+          "x": 0.00,
+          "y": 0.00,
+          "z": 1000.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ]
+}

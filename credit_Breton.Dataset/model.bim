@@ -1,0 +1,741 @@
+{
+  "compatibilityLevel": 1567,
+  "model": {
+    "annotations": [
+      {
+        "name": "__PBI_TimeIntelligenceEnabled",
+        "value": "0"
+      },
+      {
+        "name": "PBIDesktopVersion",
+        "value": "2.121.903.0 (23.09)"
+      },
+      {
+        "name": "PBI_QueryOrder",
+        "value": "[\"Agences\",\"Apport\",\"Demandes de pret\",\"Situation famille\",\"Situation pro\"]"
+      },
+      {
+        "name": "PBI_ProTooling",
+        "value": "[\"DevMode\"]"
+      }
+    ],
+    "culture": "fr-FR",
+    "cultures": [
+      {
+        "name": "fr-FR",
+        "linguisticMetadata": {
+          "content": {
+            "DynamicImprovement": "HighConfidence",
+            "Language": "en-US",
+            "Version": "1.0.0"
+          },
+          "contentType": "json"
+        }
+      }
+    ],
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "relationships": [
+      {
+        "name": "0e57aeca-bef0-4708-8be9-9d4356ac72af",
+        "fromColumn": "Numéro d'agence",
+        "fromTable": "Demandes de pret",
+        "toColumn": "Numéro d'agence",
+        "toTable": "Agences"
+      },
+      {
+        "name": "01f06f5a-7de6-42bf-9f5d-5bcfa3b98ce7",
+        "crossFilteringBehavior": "bothDirections",
+        "fromCardinality": "one",
+        "fromColumn": "Numéro demande de prêt",
+        "fromTable": "Demandes de pret",
+        "toColumn": "Numéro demande de prêt",
+        "toTable": "Apport"
+      },
+      {
+        "name": "185ce906-7315-4b99-b474-7bed0a97d71e",
+        "fromColumn": "Numéro client",
+        "fromTable": "Demandes de pret",
+        "toColumn": "Numéro client",
+        "toTable": "Situation pro"
+      },
+      {
+        "name": "8546b6b8-f094-4ad4-b62b-1bac9afc51c1",
+        "fromColumn": "Numéro client",
+        "fromTable": "Demandes de pret",
+        "toColumn": "ID_Client",
+        "toTable": "Situation famille"
+      }
+    ],
+    "sourceQueryCulture": "fr-BF",
+    "tables": [
+      {
+        "name": "Agences",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          },
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Numéro d'agence",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DataType"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "55aa094b-df0b-4514-aa1b-2dab153c1227",
+            "sourceColumn": "Numéro d'agence",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Ville",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "86e086d2-de2b-45ac-b348-a518b592be33",
+            "sourceColumn": "Ville",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Lattitude",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "c8afe4d2-5520-47db-bc73-0687baa3d6dd",
+            "sourceColumn": "Lattitude",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "longitute",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "4abaec76-3853-447d-be49-979858b0f4ad",
+            "sourceColumn": "longitute",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "0ddf7a14-ecc1-47f6-abbd-53cb193c87cc",
+        "partitions": [
+          {
+            "name": "Agences",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Excel.Workbook(File.Contents(\"D:\\Crédit Breton\\Dataset_cours_Power_BI.xlsx\"), null, true),",
+                "    Agences_Sheet = Source{[Item=\"Agences\",Kind=\"Sheet\"]}[Data],",
+                "    #\"En-têtes promus\" = Table.PromoteHeaders(Agences_Sheet, [PromoteAllScalars=true]),",
+                "    #\"Type modifié\" = Table.TransformColumnTypes(#\"En-têtes promus\",{{\"Numéro d'agence\", type text}, {\"Localisation\", type text}, {\"Ville\", type text}}),",
+                "    #\"Fractionner la colonne par délimiteur\" = Table.SplitColumn(#\"Type modifié\", \"Localisation\", Splitter.SplitTextByDelimiter(\",\", QuoteStyle.Csv), {\"Localisation.1\", \"Localisation.2\"}),",
+                "    #\"Type modifié1\" = Table.TransformColumnTypes(#\"Fractionner la colonne par délimiteur\",{{\"Localisation.1\", type text}, {\"Localisation.2\", type text}}),",
+                "    #\"Colonnes renommées\" = Table.RenameColumns(#\"Type modifié1\",{{\"Localisation.1\", \"Lattitude\"}, {\"Localisation.2\", \"longitute\"}})",
+                "in",
+                "    #\"Colonnes renommées\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Apport",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "changedProperties": [
+          {
+            "property": "IsHidden"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Numéro demande de prêt",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "458b22d6-3bf9-4482-9c1b-1d5a516ce3b3",
+            "sourceColumn": "Numéro demande de prêt",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Apport",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "double",
+            "isHidden": true,
+            "lineageTag": "a0eb20b7-c39b-441c-9b8f-00a6a8f0eda5",
+            "sourceColumn": "Apport",
+            "summarizeBy": "sum"
+          }
+        ],
+        "isHidden": true,
+        "lineageTag": "a06f0e50-037b-473b-9225-97b1c88f8ae9",
+        "partitions": [
+          {
+            "name": "Apport",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Excel.Workbook(File.Contents(\"D:\\Crédit Breton\\Dataset_cours_Power_BI.xlsx\"), null, true),",
+                "    Apport_Sheet = Source{[Item=\"Apport\",Kind=\"Sheet\"]}[Data],",
+                "    #\"En-têtes promus\" = Table.PromoteHeaders(Apport_Sheet, [PromoteAllScalars=true]),",
+                "    #\"Type modifié\" = Table.TransformColumnTypes(#\"En-têtes promus\",{{\"Numéro demande de prêt\", Int64.Type}, {\"Apport\", type number}})",
+                "in",
+                "    #\"Type modifié\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Demandes de pret",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Numéro demande de prêt",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "3a1af943-7643-407d-8021-76d7d40b5797",
+            "sourceColumn": "Numéro demande de prêt",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Montant opération",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "SortByColumn"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "#,0",
+            "lineageTag": "6b3b33b3-34fd-4a8c-a488-3356bc53ac1e",
+            "sourceColumn": "Montant opération",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Durée",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "0aa3620e-f7a0-4f31-8647-ace3ce704db6",
+            "sourceColumn": "Durée",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Numéro client",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "306338fc-5ea4-4336-830c-6c3282d1aa3a",
+            "sourceColumn": "Numéro client",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Accord",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "a6f3a1a7-a60b-4968-a430-c659f974a5fa",
+            "sourceColumn": "Accord",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Numéro d'agence",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "779d4fbf-5d52-4392-8837-08dab491602f",
+            "sourceColumn": "Numéro d'agence",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Date de demande",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "1ab42071-18a3-4a47-8564-5afaa94e33de",
+            "sourceColumn": "Date de demande",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Annee",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "expression": "YEAR('Demandes de pret'[Date de demande])",
+            "formatString": "0",
+            "isDataTypeInferred": true,
+            "lineageTag": "8a732b75-e454-4285-a0e1-dcfda0a618d9",
+            "summarizeBy": "sum",
+            "type": "calculated"
+          },
+          {
+            "name": "Trimestre",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "expression": "QUARTER('Demandes de pret'[Date de demande] )",
+            "formatString": "0",
+            "isDataTypeInferred": true,
+            "lineageTag": "3914a7e5-0a72-4c46-8120-00f03b7c3e9f",
+            "summarizeBy": "sum",
+            "type": "calculated"
+          },
+          {
+            "name": "Jour",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "expression": "DAY('Demandes de pret'[Date de demande])",
+            "formatString": "0",
+            "isDataTypeInferred": true,
+            "lineageTag": "0c2f4b22-7c69-4626-91c0-dfeb4696ab0a",
+            "summarizeBy": "sum",
+            "type": "calculated"
+          },
+          {
+            "name": "Mois",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "expression": "MONTH('Demandes de pret'[Date de demande] )",
+            "formatString": "0",
+            "isDataTypeInferred": true,
+            "lineageTag": "03f04288-ca5f-4210-b51e-f22fb6dda6ff",
+            "summarizeBy": "sum",
+            "type": "calculated"
+          },
+          {
+            "name": "Apport.1",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "192fc882-ebf1-45fe-a704-b807c8566d99",
+            "sourceColumn": "Apport.1",
+            "summarizeBy": "sum"
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "Date demande hiérachisée",
+            "levels": [
+              {
+                "name": "Annee",
+                "column": "Annee",
+                "lineageTag": "0755cda2-fdee-420b-adef-cdefe617ac40",
+                "ordinal": 0
+              },
+              {
+                "name": "Trimestre",
+                "column": "Trimestre",
+                "lineageTag": "61b21a74-564e-4c70-84b8-6a974859ab1a",
+                "ordinal": 1
+              },
+              {
+                "name": "Mois",
+                "column": "Mois",
+                "lineageTag": "629892c6-dc0a-4930-b512-72c4c79e5261",
+                "ordinal": 2
+              },
+              {
+                "name": "Jour",
+                "column": "Jour",
+                "lineageTag": "5b4f230b-7f35-41ed-a890-fde2b3378433",
+                "ordinal": 3
+              }
+            ],
+            "lineageTag": "d799cfd2-9ea1-4acf-98f2-ef6cb684c068"
+          }
+        ],
+        "lineageTag": "046de6c8-62c7-4d10-9f00-033464195561",
+        "partitions": [
+          {
+            "name": "Demandes de pret",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Excel.Workbook(File.Contents(\"D:\\Crédit Breton\\Dataset_cours_Power_BI.xlsx\"), null, true),",
+                "    #\"Demandes de pret_Sheet\" = Source{[Item=\"Demandes de pret\",Kind=\"Sheet\"]}[Data],",
+                "    #\"En-têtes promus\" = Table.PromoteHeaders(#\"Demandes de pret_Sheet\", [PromoteAllScalars=true]),",
+                "    #\"Type modifié\" = Table.TransformColumnTypes(#\"En-têtes promus\",{{\"Date de demande\", type text}}),",
+                "    #\"Duplication de la colonne\" = Table.DuplicateColumn(#\"Type modifié\", \"Date de demande\", \"Date de demande - Copier\"),",
+                "    #\"Type modifié1\" = Table.TransformColumnTypes(#\"Duplication de la colonne\",{{\"Date de demande - Copier\", type date}}),",
+                "    #\"Colonnes supprimées\" = Table.RemoveColumns(#\"Type modifié1\",{\"Date de cloture\"}),",
+                "    #\"Colonnes permutées\" = Table.ReorderColumns(#\"Colonnes supprimées\",{\"Numéro demande de prêt\", \"Montant opération\", \"Durée\", \"Date de demande - Copier\", \"Date de demande\", \"Numéro client\", \"Accord\", \"Numéro d'agence\"}),",
+                "    #\"Colonnes supprimées1\" = Table.RemoveColumns(#\"Colonnes permutées\",{\"Date de demande\"}),",
+                "    #\"Colonnes renommées\" = Table.RenameColumns(#\"Colonnes supprimées1\",{{\"Date de demande - Copier\", \"Date de demande\"}}),",
+                "    #\"Erreurs supprimées\" = Table.RemoveRowsWithErrors(#\"Colonnes renommées\", {\"Montant opération\"}),",
+                "    #\"Type modifié2\" = Table.TransformColumnTypes(#\"Erreurs supprimées\",{{\"Montant opération\", Int64.Type}, {\"Numéro demande de prêt\", Int64.Type}}),",
+                "    #\"Requêtes fusionnées\" = Table.NestedJoin(#\"Type modifié2\", {\"Numéro demande de prêt\"}, Apport, {\"Numéro demande de prêt\"}, \"Apport\", JoinKind.LeftOuter),",
+                "    #\"Apport développé\" = Table.ExpandTableColumn(#\"Requêtes fusionnées\", \"Apport\", {\"Apport\"}, {\"Apport.1\"})",
+                "in",
+                "    #\"Apport développé\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Situation famille",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "ID_Client",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "b6d4b4d0-01eb-4664-85ed-2a2c53be8a2c",
+            "sourceColumn": "ID_Client",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Nom",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "b0266ff5-992d-4702-b8f3-67d4dac9034c",
+            "sourceColumn": "Nom",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Prénom",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "51ab46a6-0997-4cf5-9af8-5fec3da5b51c",
+            "sourceColumn": "Prénom",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Date de naissance",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "586af2e3-5ff4-4994-b8cf-f71e0c64eea7",
+            "sourceColumn": "Date de naissance",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Situation familliale",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "fae644cc-25a6-4a19-88cc-781befcee75b",
+            "sourceColumn": "Situation familliale",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Nombre d'enfants à charge",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "double",
+            "formatString": "0",
+            "lineageTag": "2352421e-fb49-468e-b72f-a8dbf4808c8b",
+            "sourceColumn": "Nombre d'enfants à charge",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "4b2ee6d3-382d-453d-a231-bf65133a0f57",
+        "partitions": [
+          {
+            "name": "Situation famille",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Excel.Workbook(File.Contents(\"D:\\Crédit Breton\\Dataset_cours_Power_BI.xlsx\"), null, true),",
+                "    #\"Situation famille_Sheet\" = Source{[Item=\"Situation famille\",Kind=\"Sheet\"]}[Data],",
+                "    #\"En-têtes promus\" = Table.PromoteHeaders(#\"Situation famille_Sheet\", [PromoteAllScalars=true]),",
+                "    #\"Type modifié\" = Table.TransformColumnTypes(#\"En-têtes promus\",{{\"ID_Client\", Int64.Type}, {\"Nom\", type text}, {\"Prénom\", type text}, {\"Date de naissance\", type date}, {\"Situation familliale\", type text}, {\"Nombre d'enfants à charge\", Int64.Type}}),",
+                "    #\"Valeur remplacée\" = Table.ReplaceValue(#\"Type modifié\",30,3,Replacer.ReplaceValue,{\"Nombre d'enfants à charge\"}),",
+                "    #\"Valeur remplacée1\" = Table.ReplaceValue(#\"Valeur remplacée\",20,2,Replacer.ReplaceValue,{\"Nombre d'enfants à charge\"}),",
+                "    #\"Valeur remplacée2\" = Table.ReplaceValue(#\"Valeur remplacée1\",\"PACS\",\"Pacsé\",Replacer.ReplaceText,{\"Situation familliale\"})",
+                "in",
+                "    #\"Valeur remplacée2\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Situation pro",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Numéro client",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "982c73f1-8d8d-448b-ad8e-3890556e49a0",
+            "sourceColumn": "Numéro client",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Catégorie socioprofessionnelle",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "d0462160-4d1a-4bd7-a380-b28b220f5581",
+            "sourceColumn": "Catégorie socioprofessionnelle",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Statut d'emploi",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "e7968a6c-5b23-4d71-ab6b-77526bd413e3",
+            "sourceColumn": "Statut d'emploi",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Régularité des revenus",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "97d12400-f5c1-49f5-9676-710647d36e07",
+            "sourceColumn": "Régularité des revenus",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Revenu mensuel moyen",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "dadd9b63-47b0-44bc-9752-9d5f2e3ff69e",
+            "sourceColumn": "Revenu mensuel moyen",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "81632ae5-280a-4fae-bf9e-4eaf349ad24d",
+        "partitions": [
+          {
+            "name": "Situation pro",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Excel.Workbook(File.Contents(\"D:\\Crédit Breton\\Dataset_cours_Power_BI.xlsx\"), null, true),",
+                "    #\"Situation pro_Sheet\" = Source{[Item=\"Situation pro\",Kind=\"Sheet\"]}[Data],",
+                "    #\"En-têtes promus\" = Table.PromoteHeaders(#\"Situation pro_Sheet\", [PromoteAllScalars=true]),",
+                "    #\"Type modifié\" = Table.TransformColumnTypes(#\"En-têtes promus\",{{\"Numéro client\", Int64.Type}, {\"Catégorie socioprofessionnelle\", type text}, {\"Statut d'emploi\", type text}, {\"Régularité des revenus\", type text}, {\"Revenu mensuel moyen\", type number}})",
+                "in",
+                "    #\"Type modifié\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
